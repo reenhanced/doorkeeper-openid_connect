@@ -9,7 +9,8 @@ module Doorkeeper
           get_strategy_without_multitype(grant_or_request_type, available)
         end
       end
-      alias_method_chain :get_strategy, :multitype
+      alias_method :get_strategy_without_multitype, :get_strategy
+      alias_method :get_strategy, :get_strategy_with_multitype
     end
   end
 end
